@@ -1,8 +1,6 @@
 import pyperclip
 import threading
 import keyboard
-from queue import Queue
-
 
 lock = threading.Lock()
 
