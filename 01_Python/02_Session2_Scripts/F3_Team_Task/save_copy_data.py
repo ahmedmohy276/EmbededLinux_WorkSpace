@@ -1,16 +1,23 @@
 import pyperclip
 import threading
 import keyboard
+from queue import Queue
 
+
+lock = threading.Lock()
 
 copydata = ''
+
 def shortcut_trigger():
     global copydata
     f = open("notes.txt","+r")
     f.read()
+    lock.acquire()
     f.write(copydata)
     f.close()   
     copydata = ''
+    lock.release()
+    
     
 def check_and_create_txt_file():
     try:
@@ -42,8 +49,9 @@ def waitforcopy():
     global copydata
     while True :
         pyperclip.waitForNewPaste()
+        lock.acquire()
         copydata += (pyperclip.paste() + "\n")
-
+        lock.release()
 
 check_and_create_txt_file()
 
