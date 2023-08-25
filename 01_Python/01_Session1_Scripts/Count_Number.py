@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def List_count_number(num,ls):
+def List_count_number(num,*ls):
     count = 0
     for i in ls:
         if i == num:

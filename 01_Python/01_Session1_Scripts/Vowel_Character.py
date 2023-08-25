@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-vowelchar = ['a', 'e', 'i', 'o', 'u']
+vowelchar = {'a', 'e', 'i', 'o', 'u'}
 def Check_vowel_char(char):
     if char in vowelchar:
         print("%s is a vowel." % char)
