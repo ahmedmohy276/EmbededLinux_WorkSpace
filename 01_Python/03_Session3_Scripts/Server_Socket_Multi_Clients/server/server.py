@@ -11,6 +11,7 @@ ADDR = (SERVER_IP,PORT)
 def client_handler(connection):
     global Length
     global FORMAT
+    global SERVER_IP
     msg = "You are now connected to the replay server... Type BYE to stop"
     connection.send(msg.encode(FORMAT))
     while True:
