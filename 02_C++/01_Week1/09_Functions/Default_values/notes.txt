@@ -1,0 +1,7 @@
+- if we set default value to parameter we should set default value to the next parameters after it.
+
+- Example
+
+	void func(int x , int y = 10, int z = 2);    this is correct
+	void func(int x , int y = 10, int z);    	   this is incorrect
+

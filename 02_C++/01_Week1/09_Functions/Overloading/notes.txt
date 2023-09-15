@@ -1,0 +1,16 @@
+- The oveloading is available only on Functions argument parameter not to the return value
+
+- so if you have two similar functions with differnt return type onl this will be an error
+
+- the overloading is similar functions with differnt arguments types and the compiler will
+ choose the specific function dependent on the argument type that passes with the function call
+
+- Note that the compiler gives different names and different addresses to this similar functions (this method called mangling) and we can show the sympol table to see that by run command "nm main"
+
+- example 
+	void Func(int x , float y);
+	void Func(int x , int y);
+
+	void LCD_Display(const char *s);  instead of  void LCD_Display_String(const char *s);
+	void LCD_Display(char c);	  instead of  void LCD_Display_Char(char c);
+	void LCD_Display(int num);	  instead of  void LCD_Display_Number(int num);

@@ -1,0 +1,7 @@
+- to print bool type as true or false not numbers 0,1
+    std::cout << std::boolalpha << x2 << std::endl;
+    
+- run command "g++ -g main.cpp main" to generate execute debug file
+
+- run command "gdb -tui main" to enter debug session on gdb.
+
