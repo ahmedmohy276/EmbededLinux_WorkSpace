@@ -1,6 +1,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <vector>
 
 #include "even_odd_array_elements.hpp"
 
@@ -8,26 +9,27 @@ int main(void)
 {
     int size{};
     int count{};
+    int input{};
     do 
     {
      std::cout<<"please enter array size greater than 0 : ";
      std::cin>>size;
     }while (size <= 0);
 
-    int* arr = new int[size];
+    std::vector<int>v;
 
     do 
     {
      std::cout<<"please enter array element "<<count<<" : ";
-     std::cin>>arr[count];
+     std::cin>>input;
+     v.push_back(input);
      count++;
     }while (count < size);
 
-    get_even_nums_of_arr(arr, size);
+    get_even_nums_of_arr(v);
     std::cout<<std::endl;
-    get_odd_nums_of_arr(arr, size);
+    get_odd_nums_of_arr(v);
     std::cout<<std::endl;
     
-    delete[] arr;
     return 0;
 }

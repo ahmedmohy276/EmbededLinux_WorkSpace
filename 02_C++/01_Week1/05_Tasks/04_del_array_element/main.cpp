@@ -1,24 +1,27 @@
 
 #include <algorithm>
 #include <iostream>
+#include <numeric>
+#include <bits/stdc++.h>
 
 int main(void)
 {
     int size{};
     int count{};
     int delnum{};
+    int input{};
     do 
     {
      std::cout<<"please enter array size greater than 0 : ";
      std::cin>>size;
     }while (size <= 0);
 
-    int* arr = new int[size];
-
+    std::vector<int>v;
     do 
     {
      std::cout<<"please enter array element "<<count<<" : ";
-     std::cin>>arr[count];
+     std::cin>>input;
+     v.push_back(input);
      count++;
     }while (count < size);
 
@@ -26,13 +29,29 @@ int main(void)
     std::cin>>delnum;
 
     std::cout<<std::endl;
-    auto arrend = std::remove(arr,arr+size,delnum);
-    std::cout<<"array after delete :  "<<std::endl;
-    for (int i = 0; ((arrend) != (arr+i)); i++) 
+    auto arrend = std::remove(v.begin(),v.end(),delnum);
+    std::cout<<"After remove"<<std::endl;
+    std::for_each(v.begin(),v.end(),[](int x)
     {
-        std::cout<<arr[i]<<" , ";
-    }
+        std::cout<<x<<" , ";
+    });
     std::cout<<std::endl;
-    delete [] arr;
+
+    std::fill(arrend,v.end(),0);
+    std::cout<<"After fill "<<std::endl;
+    std::for_each(v.begin(),v.end(),[](int x)
+    {
+        std::cout<<x<<" , ";
+    });
+    std::cout<<std::endl;
+
+    v.erase(arrend,v.end());
+    std::cout<<"After erase"<<std::endl;
+    std::for_each(v.begin(),v.end(),[](int x)
+    {
+        std::cout<<x<<" , ";
+    });
+    std::cout<<std::endl;
+
     return 0;
 }

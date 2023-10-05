@@ -15,12 +15,12 @@ auto ascending =  [](int first , int second)
     };
 
 
-void sort_array_ascending(int arr[] , int arr_size)
+void sort_array_ascending(std::vector<int> &v)
 {
-    std::sort(arr,arr+arr_size,ascending);
+    std::sort(v.begin(),v.end(),ascending);
 }
 
-void sort_array_descending(int arr[] , int arr_size)
+void sort_array_descending(std::vector<int> &v)
 {
-    std::sort(arr,arr+arr_size,descending);
+    std::sort(v.begin(),v.end(),descending);
 }

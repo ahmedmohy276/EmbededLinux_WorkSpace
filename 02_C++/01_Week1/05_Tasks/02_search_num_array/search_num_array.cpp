@@ -1,14 +1,14 @@
 #include <algorithm>
 #include <iostream>
+#include "search_num_array.hpp"
 
-int search_num(int* arr , int size , int num)
+int search_num(std::vector<int>v , int num)
 {
-    int* ptr;
-    ptr = std::find(arr , arr+size, num);
+    auto ptr = std::find(v.begin(),v.end(),num);
     int index{};
-    if (ptr != (arr+size)) 
+    if (ptr != v.end()) 
     {
-        index = std::distance(arr,ptr);
+        index = std::distance(v.begin(),ptr);
         std::cout<<"value "<<num<<" is found at index : "<<index<<std::endl;
     }
     else 

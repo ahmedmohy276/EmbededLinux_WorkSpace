@@ -1,6 +1,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <vector>
 
 #include "max_array_element.hpp"
 
@@ -10,9 +11,8 @@
 *    int arr_size : array size
 *    return : return the max element
 ***************************************************/
-int max_element(int arr[] , int arr_size)
+int max_element(std::vector<int> v)
 {
-    int* ptrmax;
-    ptrmax = std::max_element(&arr[0],&arr[arr_size]);
-    return *ptrmax; 
+    auto ptrmax_min = std::max_element(v.begin(),v.end());
+    return *ptrmax_min; 
 }
