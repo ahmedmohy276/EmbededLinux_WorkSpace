@@ -13,7 +13,7 @@ int main(void)
      std::cin>>size;
     }while (size <= 0);
 
-    int* arr = new int(size);
+    int* arr = new int[size];
 
     do 
     {
@@ -23,6 +23,6 @@ int main(void)
     }while (count < size);
 
     std::cout<<"Max element = "<<max_element(arr,size)<<std::endl;
-    delete(arr);
+    delete [] arr;
     return 0;
 }

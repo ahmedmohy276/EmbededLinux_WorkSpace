@@ -14,14 +14,14 @@ int main(void)
      std::cout<<"please enter first array size greater than 0 : ";
      std::cin>>arr1_size;
     }while (arr1_size <= 0);
-    int* arr1 = new int(arr1_size);
+    int* arr1 = new int[arr1_size];
 
     do 
     {
      std::cout<<"please enter second array size greater than 0 : ";
      std::cin>>arr2_size;
     }while (arr2_size <= 0);
-    int* arr2 = new int(arr2_size);
+    int* arr2 = new int[arr2_size];
 
     do 
     {
@@ -45,8 +45,8 @@ int main(void)
         std::cout<<x<<" , ";
     });
     std::cout<<std::endl;
-    delete(arr1);
-    delete(arr2);
-    delete(mergarr);
+    delete [] arr1;
+    delete [] arr2;
+    delete [] mergarr;
     return 0;
 }

@@ -14,7 +14,7 @@ int main(void)
      std::cin>>size;
     }while (size <= 0);
 
-    int* arr = new int(size);
+    int* arr = new int[size];
 
     do 
     {
@@ -27,6 +27,6 @@ int main(void)
     std::cin>>num;
 
     (void)search_num(arr,size,num);
-    delete(arr);
+    delete [] arr;
     return 0;
 }
